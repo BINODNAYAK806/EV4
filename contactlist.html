@@ -34,30 +34,37 @@
       
       <script>
 
-       
-            contact.forEach(function(contact){
-    
-            var box = document.createElement("tr")
+        var contact = JSON.parse(localStorage.getItem("contact"))
+            // contact.forEach(function(contact){
+                var tbody = document.querySelector("tbody")
+                contact.forEach(e => {
+
+                    var box = document.createElement("tr")
             box.setAttribute("class" ,"box")
             var name = document.createElement("td")
-            name.innerText = contact.name
+            name.innerText = e.name
     
             var Number = document.createElement("td")
-            Number.innerText = contact.Number
+            Number.innerText = e.Number
     
     
             var type = document.createElement("td")
-            type.innerText = contact.type
+            type.innerText = e.type
     
     
                 box.append(name,Number,type)
                 
     
     
-                document.querySelector("#con").append(box)
+                // document.querySelector("#con").append(box)
+
+          tbody.append(box)
+                    
+                });
+    
             
     
-             } 
+             
     
     
           </script>
