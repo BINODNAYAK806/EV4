@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Contact List</title>
+</head>
+<body>
+    <div>
+
+        <div id="H">Home</div>
+        <div  > <a href="contactlist.html">contact list</a> </div>
+        <div id="F">Favourites  </div>
+
+    </div>
+
+    <h2>Enter Your Contact Details</h2>
+    <form action="">
+
+        <input type="text" id="n" placeholder="name">
+        <input type="number" id="cn" placeholder="number">
+        <select name="" id="t">
+            <option value="Friends">Friends</option>
+            <option value="family">family</option>
+            <option value="other">other</option>
+
+        </select>
+        <input type="submit" onclick="ale()">
+    </form>
+
+
+       <script>
+
+        var contact = JSON.parse(localStorage.getItem('contact')) || [];
+        function ale(){
+
+            var jobj = {
+
+
+                name : document.querySelector("#n").value,
+                Number : document.querySelector("#cn").value,
+                type : document.querySelector("#t").value
+
+
+
+            };
+
+            contact.push(jobj)
+            localStorage.setItem("contact", JSON.stringify(contact))
+
+            alert('contact added successfully');
+
+        }
+      
+       
+       
+       
+       </script> 
+</body>
+</html>
